@@ -53,7 +53,7 @@ public class LargestRectangle84_2 {
 
     @Test
     public void TestlargestRectangle2() {
-        int[] heights = new int[]{2, 1, 5, 6, 2, 3};
+        int[] heights = new int[]{2, 3, 5, 6, 2, 3};
         System.out.println(largestRectangle2(heights));
         heights = new int[]{20, 1, 2, 1, 2, 1};
         System.out.println(largestRectangle2(heights));
@@ -73,7 +73,7 @@ public class LargestRectangle84_2 {
 
     @Test
     public void TestlargestRectangle() {
-        int[] heights = new int[]{2, 1, 5, 6, 2, 3};
+        int[] heights = new int[]{2, 3, 5, 6, 2, 3};
         System.out.println(largestRectangleArea(heights));
         heights = new int[]{20, 1, 2, 1, 2, 1};
         System.out.println(largestRectangleArea(heights));
