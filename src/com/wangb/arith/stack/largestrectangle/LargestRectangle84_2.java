@@ -12,22 +12,6 @@ import java.util.Stack;
  * @date 2020-09-07 21:48:31
  */
 public class LargestRectangle84_2 {
-
-    public int largestRectangle2(int[] heights) {
-        int maxArea = 0;
-
-        int length = heights.length;
-
-        int[] index = new int[length];
-
-        Arrays.fill(index, length);
-
-
-
-
-        return maxArea;
-    }
-
     public int largestRectangleArea(int[] heights) {
         int n = heights.length;
         int[] left = new int[n];
@@ -49,26 +33,6 @@ public class LargestRectangle84_2 {
             ans = Math.max(ans, (right[i] - left[i] - 1) * heights[i]);
         }
         return ans;
-    }
-
-    @Test
-    public void TestlargestRectangle2() {
-        int[] heights = new int[]{2, 3, 5, 6, 2, 3};
-        System.out.println(largestRectangle2(heights));
-        heights = new int[]{20, 1, 2, 1, 2, 1};
-        System.out.println(largestRectangle2(heights));
-        heights = new int[]{2, 1, 2, 15, 2, 1};
-        System.out.println(largestRectangle2(heights));
-        heights = new int[]{10};
-        System.out.println(largestRectangle2(heights));
-        heights = new int[]{};
-        System.out.println(largestRectangle2(heights));
-        heights = new int[]{1, 1};
-        System.out.println(largestRectangle2(heights));
-        heights = new int[]{0, 9};
-        System.out.println(largestRectangle2(heights));
-        heights = new int[]{2, 1, 2};
-        System.out.println(largestRectangle2(heights));
     }
 
     @Test
