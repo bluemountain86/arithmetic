@@ -12,7 +12,7 @@ import java.util.Map;
  * @description:
  * @date 2020-09-10 21:51:27
  */
-public class Anagram242_11 {
+public class Anagram242_1 {
     public boolean isAnagram1(String s, String t) {
         System.out.println("s=" + s + ", t=" + t);
         if (s.length() != t.length()) {

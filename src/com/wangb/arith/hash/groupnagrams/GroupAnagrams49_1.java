@@ -13,8 +13,9 @@ import java.util.*;
 public class GroupAnagrams49_1 {
     public List<List<String>> groupAnagrams(String[] strs) {
         Map<String, List<String>> map = new HashMap<String, List<String>>();
+        List<List<String>> lists = new ArrayList<List<String>>();
         if (strs == null || strs.length == 0) {
-            return new ArrayList<List<String>>();
+            return lists;
         }
         for (String str : strs) {
             char[] chars = str.toCharArray();
@@ -28,7 +29,6 @@ public class GroupAnagrams49_1 {
                 map.put(key, list);
             }
         }
-        List<List<String>> lists = new ArrayList<List<String>>();
         for (List<String> list : map.values()) {
             lists.add(list);
         }
