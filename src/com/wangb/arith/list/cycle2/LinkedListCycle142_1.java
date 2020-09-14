@@ -4,7 +4,9 @@ import com.wangb.arith.list.ListNode;
 import org.junit.Test;
 
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 
 /**
  * @author wangbin
@@ -13,30 +15,20 @@ import java.util.Map;
  * @date 2020-09-05 17:25:30
  */
 public class LinkedListCycle142_1 {
-    public int listCycle(ListNode head) {
-        int pos = -1;
+    public ListNode listCycle(ListNode head) {
         if (head == null || head.next == null) {
-            return pos;
+            return null;
         }
-
-        Map<ListNode, Integer> nodeMap = new HashMap<>();
-
+        Set<ListNode> nodeMap = new HashSet<ListNode>();
         ListNode tmpNode = head;
-
-        int index = 0;
-
         while (tmpNode != null) {
-            if (nodeMap.containsKey(tmpNode)) {
-                pos = nodeMap.get(tmpNode);
-                break;
-            } else {
-                nodeMap.put(tmpNode, index);
-                index++;
-                tmpNode = tmpNode.next;
+            if (nodeMap.contains(tmpNode)) {
+                return tmpNode;
             }
+            nodeMap.add(tmpNode);
+            tmpNode = tmpNode.next;
         }
-
-        return pos;
+        return null;
     }
 
     @Test
@@ -50,20 +42,20 @@ public class LinkedListCycle142_1 {
             tail.next = tmpNextNode;
             tail = tmpNextNode;
 
-            if(i == 4) {
+            if (i == 4) {
                 index4 = tmpNextNode;
             }
 
         }
-        tail.next = index4;
+//        tail.next = index4;
 
 //        ListNode tempNode = node;
 //        while (tempNode != null) {
 //            System.out.print(tempNode.val + (tempNode.next == null ? "-->null" : "-->"));
 //            tempNode = tempNode.next;
 //        }
-        int pos = listCycle(node);
-        System.out.println(pos >= 0 ? ("tail connects to node index " + pos) : "no cycle");
+        ListNode cycleNode = listCycle(node);
+        System.out.println(cycleNode != null ? ("tail connects to node value " + cycleNode.val) : "no cycle");
 
     }
 

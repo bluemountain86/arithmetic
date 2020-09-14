@@ -8,7 +8,7 @@ import com.wangb.arith.tree.TreeNode;
  * @description:
  * @date 2020-09-13 21:50:47
  */
-public class validbst98_1 {
+public class Validbst98_1 {
     public boolean isValidBST(TreeNode root) {
         return compareTreeNode(root, null, null);
     }
