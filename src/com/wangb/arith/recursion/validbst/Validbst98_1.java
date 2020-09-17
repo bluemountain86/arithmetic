@@ -4,6 +4,7 @@ import com.wangb.arith.tree.TreeNode;
 
 import java.util.Deque;
 import java.util.LinkedList;
+import java.util.Stack;
 
 /**
  * @author wangbin
@@ -38,7 +39,7 @@ public class Validbst98_1 {
     }
 
     public boolean isValidBST2(TreeNode root) {
-        Deque<TreeNode> stack = new LinkedList<TreeNode>();
+        Stack<TreeNode> stack = new Stack<>();
         double inorder = -Double.MAX_VALUE;
         while (!stack.isEmpty() || root != null) {
             while (root != null) {
