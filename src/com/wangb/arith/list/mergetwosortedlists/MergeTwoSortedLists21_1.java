@@ -1,8 +1,6 @@
-package com.wangb.arith.arry.mergetwosortedlists;
+package com.wangb.arith.list.mergetwosortedlists;
 
 import com.wangb.arith.list.ListNode;
-
-import java.util.List;
 
 /**
  * @author wangbin
