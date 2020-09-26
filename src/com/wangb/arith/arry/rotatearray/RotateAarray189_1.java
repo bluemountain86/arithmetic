@@ -10,7 +10,7 @@ import java.util.Arrays;
  * @description:
  * @date 2020-09-16 19:44:08
  */
-public class RotateAarray198_1 {
+public class RotateAarray189_1 {
     public void rotate(int[] nums, int k) {
         int len = nums.length;
         for (int i = 0; i < k; i++) {
