@@ -3,7 +3,7 @@ package com.wangb.arith.tree.invertbinarytree;
 import com.sun.prism.sw.SWPipeline;
 import com.wangb.arith.tree.TreeNode;
 
-public class InvertBinaryTree266_1 {
+public class InvertBinaryTree226_1 {
     public TreeNode invertTree(TreeNode root) {
         swap(root);
         return root;

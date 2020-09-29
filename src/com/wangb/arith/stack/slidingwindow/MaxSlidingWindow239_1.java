@@ -3,6 +3,8 @@ package com.wangb.arith.stack.slidingwindow;
 import org.junit.Test;
 
 import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Stack;
 
 /**
@@ -11,7 +13,7 @@ import java.util.Stack;
  * @description:
  * @date 2020-09-16 19:44:08
  */
-public class MaxSlidingWindow {
+public class MaxSlidingWindow239_1 {
     public int[] maxSlidingWindow1(int[] nums, int k) {
         int len = nums.length;
         int[] maxVals = new int[len - k + 1];
@@ -35,14 +37,26 @@ public class MaxSlidingWindow {
     public int[] maxSlidingWindow2(int[] nums, int k) {
         int len = nums.length;
         int[] maxVals = new int[len - k + 1];
-        Stack<Integer> index = new Stack<>();
-        for (int i = 0; i < len; i++) {
-            if (index.isEmpty()) {
-                index.push(i);
+        LinkedList<Integer> maxIdxs = new LinkedList<>();
+        for (int i = 0; i < nums.length; i++) {
+            while (!maxIdxs.isEmpty() && nums[maxIdxs.peekLast()] <= nums[i]) {
+                maxIdxs.pollLast();
             }
-
-
+            maxIdxs.addLast(i);
+            if (maxIdxs.peek() < i - k + 1) {
+                maxIdxs.poll();
+            }
+            if (i + 1 >= k) {
+                maxVals[i - k + 1] = nums[maxIdxs.peek()];
+            }
         }
         return maxVals;
+    }
+
+    @Test
+    public void testMaxSlidingWindow2() {
+        int[] nums = new int[]{1, 3, 8, -3, 5, 3, 6, 7};
+        int[] maxVals = maxSlidingWindow2(nums, 3);
+        System.out.println(Arrays.toString(maxVals));
     }
 }
