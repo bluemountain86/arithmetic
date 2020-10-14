@@ -62,18 +62,25 @@ public class PreorderTraversal {
             return nodeList;
         }
         Stack<TreeNode> stack = new Stack<>();
+
+        // 根节点进入栈
         stack.push(root);
         while (!stack.isEmpty()) {
+
+            // 前序遍历优先父节点出栈
             TreeNode node = stack.pop();
             nodeList.add(node.val);
+
+            // 栈是后进先出，右子节点先进栈，出栈顺序排在左节点之后
             if (node.right != null) {
                 stack.push(node.right);
             }
+
+            // 栈是后进先出，左子节点后进栈，出栈顺序排在右节点之前
             if (node.left != null) {
                 stack.push(node.left);
             }
         }
         return nodeList;
     }
-
 }

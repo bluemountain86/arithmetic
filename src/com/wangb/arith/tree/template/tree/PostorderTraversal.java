@@ -58,12 +58,24 @@ public class PostorderTraversal {
      */
     public List<Integer> iter(TreeNode root) {
         List<Integer> nodeList = new ArrayList<>();
-
+        if (root == null) {
+            return nodeList;
+        }
         Stack<TreeNode> stack = new Stack<>();
-
-        while(root != null && !stack.isEmpty()) {
-            while ( root != null) {
+        TreeNode prev = null;
+        while (root != null || !stack.isEmpty()) {
+            while (root != null) {
                 stack.push(root);
+                root = root.left;
+            }
+            root = stack.pop();
+            if (root.right == null || root.right == prev) {
+                nodeList.add(root.val);
+                prev = root;
+                root = null;
+            } else {
+                stack.push(root);
+                root = root.right;
             }
         }
 

@@ -71,7 +71,7 @@ public class InorderTraversal {
             root = stack.pop();
             nodeList.add(root.val);
 
-            // 持续把左节点压入栈中
+            // 把右节点压入栈中
             root = root.right;
         }
 
