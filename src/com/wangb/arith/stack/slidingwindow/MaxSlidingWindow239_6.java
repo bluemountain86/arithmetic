@@ -18,9 +18,9 @@ public class MaxSlidingWindow239_6 {
                 index.pollLast();
             }
 
-            index.add(i);
+            index.addLast(i);
 
-            if (index.peek() < i - k + 1) {
+            if (index.peek() <= i - k) {
                 index.poll();
             }
 

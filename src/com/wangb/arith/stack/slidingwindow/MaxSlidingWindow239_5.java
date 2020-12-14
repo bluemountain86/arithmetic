@@ -19,14 +19,14 @@ public class MaxSlidingWindow239_5 {
                 maxIndexs.pollLast();
             }
 
-            maxIndexs.add(i);
+            maxIndexs.addLast(i);
 
             if (maxIndexs.peek() < i - k + 1) {
                 maxIndexs.poll();
             }
 
             if (i >= k - 1) {
-                maxVals[i - k + 1] = nums[maxIndexs.peekLast()];
+                maxVals[i - k + 1] = nums[maxIndexs.peek()];
             }
         }
         return maxVals;
