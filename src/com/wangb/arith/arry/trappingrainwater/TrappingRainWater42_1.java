@@ -30,5 +30,9 @@ public class TrappingRainWater42_1 {
     public void testTrap() {
         int[] height = new int[]{0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1};
         System.out.println(trap(height));
+        String binaryStr =  Integer.toBinaryString(58);
+        System.out.println(binaryStr.substring(binaryStr.length() - 4));
+        System.out.println(Integer.valueOf(binaryStr.substring(binaryStr.length() - 4), 2)  % 16);
+
     }
 }
