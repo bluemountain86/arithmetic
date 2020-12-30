@@ -14,10 +14,15 @@ public class InsertionSort_1 {
             return nums;
         }
         for (int i = 1; i < nums.length; i++) {
-            int minIndex = i;
-            for (int j = i - 1; j >= 0; j--) {
-
+            int currVal = nums[i];
+            int j = i;
+            while (j > 0 && nums[j] < nums[j - 1]) {
+                int tmp = nums[j];
+                nums[j] = nums[j - 1];
+                nums[j - 1] = tmp;
+                j--;
             }
+            nums[j] = currVal;
         }
         return nums;
     }
@@ -26,5 +31,7 @@ public class InsertionSort_1 {
     public void testInsertionSort() {
         int[] nums = {9, 98, 1, 3, 6, 54, 89, 2, 501, 5, 98, 12};
         System.out.println(Arrays.toString(insertionSort(nums)));
+        int[] nums2 = {99, 98};
+        System.out.println(Arrays.toString(insertionSort(nums2)));
     }
 }
