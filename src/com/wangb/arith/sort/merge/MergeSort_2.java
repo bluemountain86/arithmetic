@@ -6,10 +6,9 @@ import java.util.Arrays;
 
 /**
  * @Author wangbin
- * @Date 2020/12/30
+ * @Date 2020/12/31
  */
-public class MergeSort_1 {
-
+public class MergeSort_2 {
     public void mergeSort(int[] nums, int start, int end) {
         if (start >= end) {
             return;
@@ -21,24 +20,28 @@ public class MergeSort_1 {
     }
 
     private void merge(int[] nums, int start, int mid, int end) {
-        int[] mergeArray = new int[end + 1];
+        int[] meregeArray = new int[end + 1];
         int low = start;
         int left = start;
         int center = mid + 1;
+
         while (start <= mid && center <= end) {
-            mergeArray[low++] = nums[start] > nums[center] ? nums[center++] : nums[start++];
+            meregeArray[low++] = nums[start] > nums[center] ? nums[center++] : nums[start++];
         }
 
         while (start <= mid) {
-            mergeArray[low++] = nums[start++];
+            meregeArray[low++] = nums[start++];
         }
+
         while (center <= end) {
-            mergeArray[low++] = nums[center++];
+            meregeArray[low++] = nums[center++];
         }
+
         for (int i = left; i <= end; i++) {
-            nums[i] = mergeArray[i];
+            nums[i] = meregeArray[i];
         }
     }
+
 
     @Test
     public void testMergeSort() {
@@ -46,5 +49,4 @@ public class MergeSort_1 {
         mergeSort(array, 0, array.length - 1);
         System.out.println(Arrays.toString(array));
     }
-
 }
