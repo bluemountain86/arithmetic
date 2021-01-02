@@ -13,7 +13,8 @@ public class MergeSort_2 {
         if (start >= end) {
             return;
         }
-        int mid = (start + end) / 2;
+//        int mid = (start + end) / 2;
+        int mid = start + (end -start) / 2;
         mergeSort(nums, start, mid);
         mergeSort(nums, mid + 1, end);
         merge(nums, start, mid, end);

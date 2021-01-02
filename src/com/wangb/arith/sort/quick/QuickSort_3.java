@@ -6,19 +6,19 @@ import java.util.Arrays;
 
 /**
  * @Author wangbin
- * @Date 2020/12/30
+ * @Date 2021/1/1
  */
-public class QuickSort_1 {
+public class QuickSort_3 {
     public void quickSort(int[] nums, int begin, int end) {
         if (begin >= end) {
             return;
         }
-        int pivot = divide(nums, begin, end);
+        int pivot = divid(nums, begin, end);
         quickSort(nums, begin, pivot - 1);
         quickSort(nums, pivot + 1, end);
     }
 
-    private int divide(int[] nums, int begin, int end) {
+    private int divid(int[] nums, int begin, int end) {
         int counter = begin;
         int pivot = end;
         for (int i = begin; i < pivot; i++) {
@@ -29,13 +29,13 @@ public class QuickSort_1 {
                 counter++;
             }
         }
+
         int tmp = nums[pivot];
         nums[pivot] = nums[counter];
         nums[counter] = tmp;
-        
+
         return counter;
     }
-
 
     @Test
     public void testQuickSort() {
