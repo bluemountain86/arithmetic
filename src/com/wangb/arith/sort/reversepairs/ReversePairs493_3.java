@@ -37,7 +37,7 @@ public class ReversePairs493_3 {
                 merge[mergeIndex++] = nums[left++];
             }
             merge[mergeIndex] = nums[right];
-            count += mid + 1 - counter;
+            count += mid + 1 - counter; //为什么要+1，因为前面counter++，会多一次
         }
 
         while (left <= mid) {
