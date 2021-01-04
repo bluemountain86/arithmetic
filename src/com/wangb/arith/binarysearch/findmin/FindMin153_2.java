@@ -12,6 +12,7 @@ public class FindMin153_2 {
             return nums[0];
         }
         int midIndex = 0;
+        //[4,5,6,7,0,1,2]
         while (left < right) {
             midIndex = left + (right - left) / 2;
             if (nums[midIndex] < nums[right]) {
