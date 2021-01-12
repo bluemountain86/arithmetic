@@ -1,5 +1,7 @@
 package com.wangb.arith.dp.uniquepaths2;
 
+import org.junit.Test;
+
 /**
  * @Author wangbin
  * @Date 2021/1/11
@@ -20,5 +22,11 @@ public class UniquePathsWithObstacles63_4 {
             }
         }
         return grids[n - 1];
+    }
+
+    @Test
+    public void testUniquePathsWithObstacles() {
+        int[][] obstacleGrid = new int[][]{{0, 0, 0}, {0, 1, 0}, {0, 0, 1}};
+        System.out.println(uniquePathsWithObstacles(obstacleGrid));
     }
 }
