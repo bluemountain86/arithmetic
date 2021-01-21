@@ -10,26 +10,17 @@ import java.util.Arrays;
  */
 public class CoinChange322_1 {
     public int coinChange(int[] coins, int amount) {
-        Arrays.sort(coins);
-
-        if (amount == 0) {
-            return 0;
-        }
-
-        if (coins[0] > amount) {
-            return -1;
-        }
-
-        int counter = 0;
-
-        for (int i = coins.length - 1; i >= 0; i--) {
-            if (amount / coins[i] > 0) {
-                counter += amount / coins[i];
-                amount = amount % coins[i];
-                System.out.println(coins[i]);
+        int max = amount + 1;
+        int[] dp = new int[max];
+        Arrays.fill(dp, max);
+        for (int i = 1; i <= amount; i++) {
+            for (int j = 0; j < coins.length; j++) {
+                if (coins[j] <= i) {
+                    dp[i] = Math.min(dp[i], dp[i - coins[j]] + 1);
+                }
             }
         }
-        return amount > 0 ? -1 : counter;
+        return dp[amount] > amount ? -1 : dp[amount];
     }
 
     @Test
@@ -40,7 +31,7 @@ public class CoinChange322_1 {
 //        int[] coins2 = new int[]{2};
 //        System.out.println(coinChange(coins2, 3));
 
-        int[] coins3 = new int[]{186,419,83,408};
+        int[] coins3 = new int[]{186, 419, 83, 408};
         System.out.println(coinChange(coins3, 6249));
 
     }

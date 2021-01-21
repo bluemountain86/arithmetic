@@ -19,6 +19,6 @@ public class Fib_3 {
 
     @Test
     public void testFib() {
-        System.out.println(fib(10));
+        System.out.println(fib(30));
     }
 }

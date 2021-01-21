@@ -24,7 +24,7 @@ public class Fib_2 {
 
     @Test
     public void testFib() {
-        int n = 50;
+        int n = 30;
         long[] memo = new long[n + 1];
         System.out.println(fib(n, memo));
     }
