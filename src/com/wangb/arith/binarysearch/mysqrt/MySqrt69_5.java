@@ -4,17 +4,17 @@ import org.junit.Test;
 
 /**
  * @Author wangbin
- * @Date 2021/1/4
+ * @Date 2021/1/26
  */
-public class MySqrt69_4 {
+public class MySqrt69_5 {
     public int mySqrt(int x) {
         int left = 0;
         int right = x;
         int ans = 0;
         while (left <= right) {
             int mid = left + (right - left) / 2;
-            long sqrty = (long) mid * mid;
-            if (sqrty <= x) {
+            long tmpSqr = (long) mid * mid;
+            if (tmpSqr <= x) {
                 left = mid + 1;
                 ans = mid;
             } else {
@@ -41,27 +41,4 @@ public class MySqrt69_4 {
         System.out.println(mySqrt(1025));
         System.out.println(mySqrt(2147395599));
     }
-
-
-    public void mid(int x) {
-        int left = 0;
-        int right = x;
-
-        while (left <= right) {
-            int mid = left + (right - left) / 2;
-            long sqrty = (long) mid * mid;
-            System.out.println("left=" + left + ",right=" + right + ", mid=" + mid);
-            if (sqrty <= x) {
-                left = mid + 1;
-            } else {
-                right = mid - 1;
-            }
-        }
-    }
-
-    @Test
-    public void testMid() {
-        mid(1024);
-    }
-
 }
